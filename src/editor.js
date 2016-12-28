@@ -42,6 +42,7 @@ class MediumDraftEditor extends React.Component {
     spellCheck: PropTypes.bool,
     stringToTypeMap: PropTypes.object,
     blockRenderMap: PropTypes.object,
+    linkComponent: PropTypes.func,
     blockButtons: PropTypes.arrayOf(PropTypes.shape({
       component: React.PropTypes.func,
       label: React.PropTypes.string.isRequired,
@@ -367,6 +368,7 @@ class MediumDraftEditor extends React.Component {
               ref={(c) => { this.toolbar = c; }}
               editorNode={this._editorNode}
               editorState={editorState}
+              linkComponent={this.props.linkComponent}
               toggleBlockType={this.toggleBlockType}
               toggleInlineStyle={this.toggleInlineStyle}
               editorEnabled={editorEnabled}

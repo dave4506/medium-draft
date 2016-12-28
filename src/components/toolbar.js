@@ -18,6 +18,7 @@ export default class Toolbar extends React.Component {
     editorState: PropTypes.object,
     toggleBlockType: PropTypes.func,
     toggleInlineStyle: PropTypes.func,
+    linkComponent: PropTypes.func,
     inlineButtons: PropTypes.arrayOf(PropTypes.object),
     blockButtons: PropTypes.arrayOf(PropTypes.object),
     editorNode: PropTypes.object,
@@ -259,7 +260,7 @@ export default class Toolbar extends React.Component {
               onClick={this.handleLinkInput}
               aria-label={hyperlinkDescription}
             >
-              {hyperlinkLabel}
+              {this.props.linkComponent || hyperlinkLabel}
             </a>
           </div>
         )}
@@ -342,4 +343,3 @@ export const INLINE_BUTTONS = [
   //   style: 'CODE',
   //   description: 'Inline Code',
   // },
-
