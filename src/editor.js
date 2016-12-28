@@ -43,12 +43,14 @@ class MediumDraftEditor extends React.Component {
     stringToTypeMap: PropTypes.object,
     blockRenderMap: PropTypes.object,
     blockButtons: PropTypes.arrayOf(PropTypes.shape({
+      component: React.PropTypes.func,
       label: React.PropTypes.string.isRequired,
       style: React.PropTypes.string.isRequired,
       icon: React.PropTypes.string,
       description: React.PropTypes.string,
     })),
     inlineButtons: PropTypes.arrayOf(PropTypes.shape({
+      component: React.PropTypes.func,
       label: React.PropTypes.string.isRequired,
       style: React.PropTypes.string.isRequired,
       icon: React.PropTypes.string,

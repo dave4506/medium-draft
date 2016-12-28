@@ -1,6 +1,16 @@
 import React, { PropTypes } from 'react';
-
 import { HYPERLINK } from '../util/constants.js';
+
+const renderIcon = (icon, component, label) => {
+  const Component = component;
+  if (icon) {
+    return <i className={`fa fa-${icon}`} />;
+  }
+  if (component) {
+    return (<Component />);
+  }
+  return label;
+};
 
 export default class StyleButton extends React.Component {
   constructor() {
@@ -26,7 +36,7 @@ export default class StyleButton extends React.Component {
         onMouseDown={this.onToggle}
         aria-label={this.props.description}
       >
-        {this.props.icon ? <i className={`fa fa-${this.props.icon}`} /> : this.props.label}
+        {renderIcon(this.props.icon, this.props.component, this.props.label)}
       </span>
     );
   }
@@ -34,6 +44,7 @@ export default class StyleButton extends React.Component {
 
 
 StyleButton.propTypes = {
+  component: PropTypes.func,
   onToggle: PropTypes.func,
   style: PropTypes.string,
   active: PropTypes.bool,
