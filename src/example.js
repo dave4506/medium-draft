@@ -467,6 +467,7 @@ class App extends React.Component {
           sideButtons={this.sideButtons}
           blockButtons={BlockButtons}
           rendererFn={this.rendererFn}
+          linkComponent={icon("https://firebasestorage.googleapis.com/v0/b/impresssive-86554.appspot.com/o/icons%2Fanimals-01.svg?alt=media&token=74b64218-cc05-4baa-a4ed-9935718e9af2")}
         />
       </div>
     );

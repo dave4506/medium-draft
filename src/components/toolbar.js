@@ -234,6 +234,7 @@ export default class Toolbar extends React.Component {
         break;
       }
     }
+    const LinkComponent = this.props.linkComponent;
     return (
       <div
         className={`md-editor-toolbar${(isOpen ? ' md-editor-toolbar--isopen' : '')}`}
@@ -260,7 +261,7 @@ export default class Toolbar extends React.Component {
               onClick={this.handleLinkInput}
               aria-label={hyperlinkDescription}
             >
-              {this.props.linkComponent || hyperlinkLabel}
+              {<LinkComponent /> || hyperlinkLabel}
             </a>
           </div>
         )}
